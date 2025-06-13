@@ -30,8 +30,7 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
         run: |
-          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-          touch _site/.nojekyll
+          bundle exec jekyll build --baseurl "/profile"
         env:
           JEKYLL_ENV: production
           BUNDLE_GEMFILE: ${{ github.workspace }}/Gemfile
