@@ -1,0 +1,47 @@
+title: The Journey
+description: My Research Journey
+baseurl: "/profile"
+url: "https://phuvinhnguyen.github.io"
+
+# Google OAuth configuration
+google_client_id: "YOUR_GOOGLE_CLIENT_ID"  # Replace with your actual Google Client ID
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:title/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Author Name"
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore
+  - .jekyll-cache
+  - .github
+
+# GitHub Pages settings
+github:
+  [metadata]
+
+# Build settings
+destination: _site 

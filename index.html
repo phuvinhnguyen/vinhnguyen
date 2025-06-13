@@ -1,0 +1,37 @@
+---
+layout: default
+title: Home
+---
+
+<div class="home-content animate__animated animate__fadeIn">
+    <section class="hero">
+        <h1>Welcome to {{ site.title }}</h1>
+        <p class="lead">{{ site.description }}</p>
+    </section>
+
+    <section class="featured-posts">
+        <h2>Latest Posts</h2>
+        <div class="post-grid">
+            {% for post in site.posts limit:3 %}
+            <article class="post-card">
+                <div class="post-card-content">
+                    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                    <p class="post-meta">
+                        {% if post.author %}
+                        By {{ post.author }} • 
+                        {% endif %}
+                        {{ post.date | date: "%B %d, %Y" }}
+                    </p>
+                    <p class="post-excerpt">
+                        {{ post.content | strip_html | truncatewords: 30 }}
+                    </p>
+                    <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        <div class="view-all">
+            <a href="{{ '/posts' | relative_url }}" class="button">View All Posts</a>
+        </div>
+    </section>
+</div> 
