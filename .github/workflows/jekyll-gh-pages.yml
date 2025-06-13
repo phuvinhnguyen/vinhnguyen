@@ -2,7 +2,7 @@ name: Deploy Jekyll site to Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["gh-pages"]
   workflow_dispatch:
 
 permissions:
@@ -29,9 +29,11 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "/profile"
+        run: |
+          bundle exec jekyll build --baseurl "/vinhnguyen"
         env:
           JEKYLL_ENV: production
+          BUNDLE_GEMFILE: ${{ github.workspace }}/Gemfile
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
