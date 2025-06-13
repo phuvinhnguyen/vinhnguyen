@@ -1,6 +1,6 @@
 title: The Journey
 description: My Research Journey
-baseurl: "/vinhnguyen"
+baseurl: "/profile"
 url: "https://phuvinhnguyen.github.io"
 
 # Google OAuth configuration
@@ -8,7 +8,7 @@ google_client_id: "YOUR_GOOGLE_CLIENT_ID"  # Replace with your actual Google Cli
 
 # Build settings
 markdown: kramdown
-permalink: /:title/
+permalink: /:year/:month/:day/:title/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -18,7 +18,7 @@ plugins:
 collections:
   posts:
     output: true
-    permalink: /:collection/:title/
+    permalink: /:collection/:name
 
 # Default front matter
 defaults:
@@ -27,17 +27,19 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Author Name"
+      author: "Phu Vinh Nguyen"
 
-# Exclude files from processing
+# Exclude from processing
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
   - vendor
   - .gitignore
-  - .jekyll-cache
   - .github
+  - README.md
+  - LICENSE
+  - .DS_Store
 
 # GitHub Pages settings
 github:
