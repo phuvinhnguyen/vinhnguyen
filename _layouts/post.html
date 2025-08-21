@@ -1,6 +1,59 @@
 ---
 layout: default
 ---
+<style>
+@media print {
+    /* Hide browser-generated headers and footers */
+    @page {
+        margin: 0;
+        size: A4;
+    }
+    
+    /* Hide post navigation when printing */
+    .post-navigation {
+        display: none !important;
+    }
+    
+    /* Ensure clean print layout */
+    body {
+        margin: 0;
+        padding: 1cm;
+        background: white;
+        color: black;
+    }
+    
+    .post {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .post-header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .post-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .post-meta, .post-date {
+        font-size: 0.8rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .post-content {
+        font-size: 11pt;
+        line-height: 1.4;
+    }
+    
+    /* Hide any animations during print */
+    .animate__animated {
+        animation: none !important;
+    }
+}
+</style>
+
 <article class="post animate__animated animate__fadeIn">
     <header class="post-header">
         <h1 class="post-title">{{ page.title }}</h1>
