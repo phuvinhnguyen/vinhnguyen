@@ -1,7 +1,7 @@
 ---
 layout: authenticated
 title: Machine Learning Models
-author: Your Name
+author: Vinh
 date: 2024-03-22
 ---
 
